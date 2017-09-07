@@ -15,7 +15,17 @@ trait ABTestSwitches {
     s"Test effectiveness of engagement banners in the $edition edition for driving Membership & Contributions.",
     owners = Seq(Owner.withGithub("rtyley")),
     safeState = On,
-    sellByDate = new LocalDate(2017, 9, 8), // we'll be doing AB tests on this for a long time, don't want to break the build
+    sellByDate = new LocalDate(2017, 9, 19), // we'll be doing AB tests on this for a long time, don't want to break the build
+    exposeClientSide = true
+  )
+
+  Switch(
+    ABTests,
+    "ab-glabs-traffic-driver",
+    "Displays an ad slot that will drive traffic to GLabs content",
+    owners = Seq(Owner.withGithub("JonNorman")),
+    safeState = Off,
+    sellByDate = new LocalDate(2017, 9, 7),
     exposeClientSide = true
   )
 
